@@ -33,10 +33,9 @@ func DrawTime(bindings *PixxieAPI.Binding) {
 }
 
 func draw(bindings *PixxieAPI.Binding, i uint, h int, m int, s int) {
-	drawNb(bindings, i, 0, 0)
-	drawNb(bindings, i, 2, h)
-	drawNb(bindings, i, 4, m)
-	drawNb(bindings, i, 6, s)
+	drawNb(bindings, i, 1, h)
+	drawNb(bindings, i, 3, m)
+	drawNb(bindings, i, 5, s)
 }
 
 func drawNb(bindings *PixxieAPI.Binding, y uint, x int, nb int) {
