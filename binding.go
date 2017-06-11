@@ -2,6 +2,7 @@ package PixxieAPI
 
 import (
 	"plugin"
+	"fmt"
 )
 
 type Pixel struct {
@@ -21,7 +22,7 @@ var (
 )
 
 func InitBindings() {
-	plugin, err := plugin.Open("bindings/unicorn.so")
+	plugin, err := plugin.Open(fmt.Sprintf("bindings/%s", config["bindings"]))
 	check(err)
 
 	bindTest, err := plugin.Lookup("Bindings")

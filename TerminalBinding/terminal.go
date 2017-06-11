@@ -6,10 +6,15 @@ import (
 )
 
 func SetPixel(x int, y int, r int, g int, b int) {
+	index := x+8*y
+	if x < 0 || x > 7 || y < 0 || y > 3 {
+		return;
+	}
+
 	if r+g+b == 0 {
-		data[x+8*y] = false
+		data[index] = false
 	} else {
-		data[x+8*y] = true
+		data[index] = true
 	}
 }
 

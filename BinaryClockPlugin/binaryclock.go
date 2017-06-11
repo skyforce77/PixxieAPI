@@ -57,6 +57,6 @@ func drawNb(bindings *PixxieAPI.Binding, y uint, x int, nb int) {
 
 var (
 	PluginDescriptor PixxieAPI.PixxiePlugin = PixxieAPI.PixxiePlugin{
-		"binaryclock", 60,OnInit, OnEnable, OnDisable, OnTick,
+		"binaryclock", 120,OnInit, OnEnable, OnDisable, OnTick,
 	}
 )

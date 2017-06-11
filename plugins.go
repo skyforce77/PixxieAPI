@@ -34,11 +34,11 @@ func InitPlugins() {
 
 	cnt := 0
 	for {
-		time.Sleep(time.Second)
+		time.Sleep(time.Millisecond*500)
 		if active != nil {
 			active.OnTick(bindings)
 
-			if cnt % active.DisplayTime == 0 {
+			if cnt % active.DisplayTime*2 == 0 {
 				roll()
 				cnt = 0
 			}

@@ -9,7 +9,7 @@ if [ ! -d "build/plugins" ]; then
         mkdir build/plugins
 fi
 
-go build -buildmode=plugin -o build/bindings/unicorn.so TerminalBinding/terminal.go
+go build -buildmode=plugin -o build/bindings/terminal.so TerminalBinding/terminal.go
 go build -buildmode=plugin -o build/plugins/binaryclock.so BinaryClockPlugin/binaryclock.go
 go build -buildmode=plugin -o build/plugins/youtube.so YoutubePlugin/youtube.go
 go build -o build/pixxie Main/main.go

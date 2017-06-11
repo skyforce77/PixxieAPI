@@ -1,0 +1,13 @@
+{
+  "bindings": "terminal.so",
+  "plugins": {
+    "youtube": {
+      "channel": "https://www.youtube.com/user/PewDiePie",
+      "refresh": 10
+    },
+    "twitter": {
+      "user": "Skyforce77",
+      "refresh": 10
+    }
+  }
+}
