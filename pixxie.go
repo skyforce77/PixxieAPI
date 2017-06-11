@@ -1,6 +1,6 @@
 package PixxieAPI
 
-func main() {
+func InitPixxie() {
 	InitBindings()
 	InitPlugins()
 }
