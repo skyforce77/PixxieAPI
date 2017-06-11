@@ -7,19 +7,18 @@ import (
 )
 
 var (
-	c1 = PixxieAPI.Pixel{0xa9, 0x1e, 0x1e}
-	c2 = PixxieAPI.Pixel{0xff, 0xff, 0xff}
-	c3 = PixxieAPI.Pixel{0xc5, 0x68, 0x68}
-	c4 = PixxieAPI.Pixel{0xcc, 0x92, 0x92}
+	c1 = PixxieAPI.Pixel{0x55, 0x84, 0xba}
+	c2 = PixxieAPI.Pixel{0xc9, 0xca, 0x61}
+	c3 = PixxieAPI.Pixel{0x00, 0x00, 0x00}
 
 	logo = []PixxieAPI.Pixel{
+		c3, c3, c3, c1,
+		c1, c3, c1, c2,
 		c1, c1, c1, c1,
-		c1, c2, c3, c1,
-		c1, c2, c4, c1,
-		c1, c1, c1, c1,
+		c3, c1, c1, c3,
 	}
 
-	Id = "youtube"
+	Id = "twitter"
 
 	cnt = 0
 	followers = "0"
@@ -61,11 +60,11 @@ func OnTick(bindings *PixxieAPI.Binding) {
 }
 
 func refresh() {
-	doc, err := goquery.NewDocument(PixxieAPI.GetPluginConfig(Id, "channel").(string))
+	doc, err := goquery.NewDocument(PixxieAPI.GetPluginConfig(Id, "user").(string))
 	if err != nil {
 		log.Fatal(err)
 	}
-	doc.Find(".yt-subscription-button-subscriber-count-branded-horizontal").Each(func(i int, s *goquery.Selection) {
+	doc.Find(".ProfileNav-item--followers > .ProfileNav-stat > .ProfileNav-value").Each(func(i int, s *goquery.Selection) {
 		content, err := s.Html()
 		if err == nil {
 			followers = content

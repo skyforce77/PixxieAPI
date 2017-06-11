@@ -1,5 +1,7 @@
 package PixxieAPI
 
+import "fmt"
+
 var (
 	letters = make(map[rune][]Pixel)
 	b = Pixel{0,0,0}
