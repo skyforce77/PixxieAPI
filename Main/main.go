@@ -1,6 +1,6 @@
 package main
 
-import "PixxieAPI"
+import "github.com/skyforce77/PixxieAPI"
 
 func main() {
 	PixxieAPI.InitPixxie()

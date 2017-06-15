@@ -1,7 +1,7 @@
 package main
 
 import (
-	"PixxieAPI"
+	"github.com/skyforce77/PixxieAPI"
 	"time"
 )
 
