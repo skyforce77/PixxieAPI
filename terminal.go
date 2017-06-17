@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/skyforce77/PixxieAPI"
 	"fmt"
 )
 
@@ -18,7 +17,7 @@ func SetPixel(x int, y int, r int, g int, b int) {
 	}
 }
 
-func Draw(x int, y int, image []PixxieAPI.Pixel, width int, height int) {
+func Draw(x int, y int, image []Pixel, width int, height int) {
 	for i := 0; i < width; i++ {
 		for j := 0; j < height; j++ {
 			p := image[i+width*j]
@@ -53,7 +52,7 @@ func Clear() {
 }
 
 var (
-	Bindings PixxieAPI.Binding = PixxieAPI.Binding{
+	Bindings Binding = Binding{
 		SetPixel,
 		Brightness,
 		Push,

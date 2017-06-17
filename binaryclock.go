@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/skyforce77/PixxieAPI"
 	"time"
 )
 
@@ -9,19 +8,19 @@ func OnInit() {
 
 }
 
-func OnEnable(bindings *PixxieAPI.Binding) {
+func OnEnable(bindings *Binding) {
 	DrawTime(bindings)
 }
 
-func OnDisable(bindings *PixxieAPI.Binding) {
+func OnDisable(bindings *Binding) {
 
 }
 
-func OnTick(bindings *PixxieAPI.Binding) {
+func OnTick(bindings *Binding) {
 	DrawTime(bindings)
 }
 
-func DrawTime(bindings *PixxieAPI.Binding) {
+func DrawTime(bindings *Binding) {
 	tim := time.Now()
 
 	var i uint
@@ -32,13 +31,13 @@ func DrawTime(bindings *PixxieAPI.Binding) {
 	bindings.Push()
 }
 
-func draw(bindings *PixxieAPI.Binding, i uint, h int, m int, s int) {
+func draw(bindings *Binding, i uint, h int, m int, s int) {
 	drawNb(bindings, i, 1, h)
 	drawNb(bindings, i, 3, m)
 	drawNb(bindings, i, 5, s)
 }
 
-func drawNb(bindings *PixxieAPI.Binding, y uint, x int, nb int) {
+func drawNb(bindings *Binding, y uint, x int, nb int) {
 	n1 := nb/10
 	n2 := nb%10
 
@@ -55,7 +54,7 @@ func drawNb(bindings *PixxieAPI.Binding, y uint, x int, nb int) {
 }
 
 var (
-	PluginDescriptor PixxieAPI.PixxiePlugin = PixxieAPI.PixxiePlugin{
+	PluginDescriptor PixxiePlugin = PixxiePlugin{
 		"binaryclock", 120,OnInit, OnEnable, OnDisable, OnTick,
 	}
 )

@@ -1,4 +1,4 @@
-package PixxieAPI
+package main
 
 import (
 	"encoding/json"

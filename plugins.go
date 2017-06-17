@@ -1,8 +1,7 @@
-package PixxieAPI
+package main
 
 import (
 	"plugin"
-	"io/ioutil"
 	"fmt"
 	"os"
 	"container/list"
@@ -25,10 +24,19 @@ var (
 )
 
 func InitPlugins() {
-	files, _ := ioutil.ReadDir("plugins")
+	/*files, _ := ioutil.ReadDir("plugins")
 	for _, f := range files {
 		registerPlugin(f)
-	}
+	}*/
+
+	PluginDescriptor.OnInit()
+	plugins.PushBack(&PluginDescriptor)
+
+	YoutubePluginDescriptor.OnInit()
+	plugins.PushBack(&YoutubePluginDescriptor)
+
+	TwitterPluginDescriptor.OnInit()
+	plugins.PushBack(&TwitterPluginDescriptor)
 
 	roll()
 

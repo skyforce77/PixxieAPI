@@ -1,4 +1,4 @@
-package PixxieAPI
+package main
 
 var (
 	letters = make(map[rune][]Pixel)

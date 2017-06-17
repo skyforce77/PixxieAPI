@@ -1,9 +1,4 @@
-package PixxieAPI
-
-import (
-	"plugin"
-	"fmt"
-)
+package main
 
 type Pixel struct {
 	R, G, B int
@@ -22,7 +17,7 @@ var (
 )
 
 func InitBindings() {
-	plugin, err := plugin.Open(fmt.Sprintf("bindings/%s", config["bindings"]))
+	/*plugin, err := plugin.Open(fmt.Sprintf("bindings/%s", config["bindings"]))
 	check(err)
 
 	bindTest, err := plugin.Lookup("Bindings")
@@ -31,6 +26,6 @@ func InitBindings() {
 	bind, ok := bindTest.(*Binding)
 	if !ok {
 		panic("Can't convert Bindings")
-	}
-	bindings = bind
+	}*/
+	bindings = &Bindings
 }
